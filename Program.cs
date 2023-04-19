@@ -13,9 +13,16 @@ namespace qualExamPM03
         public int Price;
     }
 
-    class Application 
+    class Applications
     {
+        private App[] _apps;
 
+
+        //в конструкторе класса создается массив объектов типа App
+        public Applications(int size)
+        {
+            _apps = new App[size];
+        }
 
     }
     class Program
