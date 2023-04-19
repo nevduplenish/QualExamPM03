@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace qualExamPM03
 {
-    struct App
+    class Program
+    {
+        struct App
     {
         public string Name;
         public string Manufacturer;
@@ -77,16 +79,22 @@ namespace qualExamPM03
             }
         }
     }
+        //реализация класса applications
+        static void Main(string[] args)
+        {
+            Console.Write("Enter array size: ");
+            int size = int.Parse(Console.ReadLine());
 
+            Applications apps = new Applications(size);
+            apps.FillArray();
+            apps.SortByManufacturerAndPriceDescending();
+            apps.SaveToFile("apps.csv");
+
+            Console.WriteLine("Done.");
+        }
+    }
 
 }
 
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            
-        }
-    }
 
