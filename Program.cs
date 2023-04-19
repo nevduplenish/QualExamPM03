@@ -46,6 +46,24 @@ namespace qualExamPM03
             }
         }
 
+        //алгоритм сортировки по убыванию двух свойств 
+        public void SortByManufacturerAndPriceDescending()
+        {
+            for (int i = 0; i < _apps.Length - 1; i++)
+            {
+                for (int j = 0; j < _apps.Length - 1 - i; j++)
+                {
+                    int compareByManufacturer = _apps[j + 1].Manufacturer.CompareTo(_apps[j].Manufacturer);
+                    if (compareByManufacturer > 0 || (compareByManufacturer == 0 && _apps[j + 1].Price > _apps[j].Price))
+                    {
+                        App temp = _apps[j];
+                        _apps[j] = _apps[j + 1];
+                        _apps[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
     }
 
 
