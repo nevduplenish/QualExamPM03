@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,7 +65,21 @@ namespace qualExamPM03
             }
         }
 
+        //метод для сохранения отсортированного массива в файл
+        public void SaveToFile(string fileName)
+        {
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (App app in _apps)
+                {
+                    writer.WriteLine($"{app.Name},{app.Manufacturer},{app.Price}");
+                }
+            }
+        }
     }
+
+
+}
 
 
     class Program
@@ -74,4 +89,4 @@ namespace qualExamPM03
             
         }
     }
-}
+
